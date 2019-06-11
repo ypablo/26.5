@@ -29,8 +29,7 @@ module.exports = (env) => {
                     ws: true
                 }
             }
-          }
-
+          },
         module: {
             rules: [
                 {
