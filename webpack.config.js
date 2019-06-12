@@ -5,11 +5,6 @@ const OptimizeJsPlugin = require('optimize-js-plugin');
 module.exports = (env) => {
     return {
         mode: env.NODE_ENV,
-        entry: './src/index.js',
-        output: {
-            path: path.resolve(__dirname, 'build'),
-            filename: 'app.bundle.js'
-        },
         plugins: [new HtmlWebpackPlugin({
             template: 'client/index.html',
             filename: 'index.html',
@@ -19,8 +14,8 @@ module.exports = (env) => {
         })],
         entry: './client/index.js',
         output: {
-        path: path.resolve(__dirname, 'public'),
-        filename: 'app.bundle.js'
+            path: path.resolve(__dirname, 'public'),
+            filename: 'app.bundle.js'
         },
         devServer: {
             proxy: {
@@ -29,7 +24,7 @@ module.exports = (env) => {
                     ws: true
                 }
             }
-          },
+        },
         module: {
             rules: [
                 {

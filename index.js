@@ -40,27 +40,6 @@ io.on('connection', (socket) => {
   });
 });
 
-/*
-io.on('connection', (socket) => {
-  socket.on('disconnect', () => {
-    usersService.removeUser(socket.id);
-    socket.broadcast.emit('update', {
-      users: usersService.getAllUsers()
-    });
-  });
-});
-
-io.on('connection', (socket) => {
-  socket.on('message', (message) => {
-    const {name} = usersService.getUserById(socket.id);
-    socket.broadcast.emit('message', {
-      text: message.text,
-      from: name
-    });
-  });
-});
-*/
-
 server.listen(3000, () => {
   console.log('listening on *:3000');
 });
